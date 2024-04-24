@@ -1,0 +1,36 @@
+#mainTopic{
+    color: blue;
+}
+*{
+    text-align: center;
+}
+h1,h3,h5 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.para{
+    color: white;
+    background-color: cornflowerblue;
+}
+button{
+    background-color: purple;
+    color : azure;
+}
+button:hover{
+    background-color: yellow;
+    color: blue;
+}
+h1::first-letter{
+    color: red;
+}
+p:nth-of-type(n+1){
+    color:yellow
+}
+/* Important note : here we changesd the color of chcekbox not of the YES */
+
+/* input[type="checkbox"]:checked{ */
+input[type="checkbox"]:checked + label{
+    color: darkgreen;
+
+}
+
+/* #mainContent>div.main>.main>h1 */

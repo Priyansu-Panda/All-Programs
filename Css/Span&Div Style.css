@@ -1,0 +1,39 @@
+/* div{
+    display: inline;
+    background-color: greenyellow;
+}
+span{
+    display: block;
+    background-color: gray;
+} */
+/* #inline{
+    border: 2px solid red;
+    height: 200px;
+    width: 300px;
+    padding: 50px;
+    margin: 50px;
+} /* background-color: aqua; */
+/* div{
+    border: 2px solid red;
+    height: 200px;
+    width: 300px;
+    padding: 50px;
+    margin: 50px;
+    background-color: aqua;
+} */
+hr{
+    margin-bottom: 96px;
+}
+
+div{
+    border: 2px solid red;
+    height: 200px;
+    width: 300px;
+    /* padding: 5px;   style on block but acts as inline */
+    margin: 5px;
+    background-color: red;
+    display: inline-block;
+}
+#tri{
+    display:none
+}

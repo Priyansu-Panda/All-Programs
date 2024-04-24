@@ -1,0 +1,84 @@
+.box{
+    height: 100px;
+    width: 300px;
+    background-color: aqua;
+
+    animation-name: F-Ani;
+    animation-duration: 4s;
+    animation-delay: 0s;
+    animation-iteration-count: 3;
+    /* animation-timing-function: ease-in; */
+    animation-direction: normal ;
+    /* animation-direction: reverse; */
+    /* animation-direction: alternate ; */
+    /* animation-direction: alternate-reverse; */
+
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
+    animation: box 2s ease 0s 4 alternate;
+    animation: bani 2s ease-out 0s infinite alternate;
+    animation: colAni 2s ease-in-out 0s infinite alternate;
+    /* animation: colAni 2s linear 0s infinite alternate; */
+
+}
+
+@keyframes F-Ani{
+    from{
+        font-size: 20px;
+    }
+    to{
+        font-size:96px
+    }
+
+}
+
+@keyframes box{
+    from{
+        background-color: yellow;
+        width: inherit;
+        height: inherit;
+    }
+    to{
+        background-color: red;
+        border-radius: 69px;
+        /* width: 3em;
+        height: 3em; */
+
+    }
+}
+
+@keyframes bani {
+    from{
+        font-size: 20px;
+        background-color: yellow;
+        width: 12px;
+        height: 14px;
+    }
+    to{
+        font-size:96px;
+        background-color : red;
+        border-radius: 69px;
+        width: 400px;
+        height: 340px;
+        text-align: center;
+    }
+    
+}
+@keyframes colAni{
+    0%{
+        background-color: green;
+    }
+    50%{
+        background-color: yellow;
+    }
+    80%{
+        background-color: red;
+    }
+    90%{
+    background-color:blue
+    }
+    100%{
+    background-color:crimson
+    }
+
+}

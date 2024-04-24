@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3</title>
+</head>
+<body>
+    
+    <div>
+        Q1. <br>
+        <caption >Student Information</caption>
+        <table id ="Student" border = "dark">
+            
+                <tr>
+                    <th rowspan="6">Info</th>
+                    <th rowspan="2">Name</th>
+                    <th colspan="2">Address</th>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <th>House</th>
+                </tr>
+            
+            
+                <tr>
+                    <td>A</td>
+                    <td>Delhi</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>Mumbai</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>Kolkata</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>Pune</td>
+                    <td>4</td>
+                </tr>
+        </table>
+    </div>
+<hr><br>
+                <div>
+                    Q2. <br>
+                    <form action="\action">
+                        <div>
+                        <label for="name">Name</label>
+                        <input type="text">
+                        </div>
+                        <br>
+                        <div>
+                            <label for="sex">Sex :</label> 
+                        <input type="radio" id = "purush" name="sex" value ="purush">   <!--Value nahi likhega to url mein = on hoga-->
+                        <label for="purush">Male</label>
+                        <input type="radio" id = "maal" name = "sex" value = "maal">
+                        <label for="maal">Female</label>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="Desh">Country</label>
+                            <select name="Loaction" id="Desh">
+                                <option value="ind">India</option>
+                                <option value="select" selected>Select An Option</option>
+                                <option value="Videsh">Videsh</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="feed">Message:</label>
+                            <br>
+                            <textarea name="feedback" id="feed" cols="30" rows="3" placeholder="Messages..."></textarea>
+                        </div>
+                        <br>
+                        <div>
+                            <input type="checkbox" name = "subs" id = "Subu">
+                            <label for="Subu">Subscribe?</label>
+                        </div>
+                        <br>
+                        <button >Submit</button>
+                    </form>
+                </div>
+<hr><br>
+                <div>
+                    Q3. <br>
+                    <h2>Feedback Form</h2>
+                    <form action="/form">
+                        <label for="name">Name:</label>
+                        <input type="text" placeholder="Write your name " id = "name" name = "naam">
+                        <br><br>
+                        <label for="id">Email: </label>
+                        <input type="email" placeholder="Write your email" id = "id" name = "emai">
+                        <br><br>
+                        <div>
+                            <label for="msg">Message:</label>
+                            <br>
+                            <textarea name="text" id="msg" cols="30" rows="6"></textarea>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="Ratee">Rate us out of 5:</label><br>
+                            <input type="radio" name = "feed" value = "One" id = "Rate1">
+                            <label for="Rate1">1</label><br>
+                            <input type="radio" name = "feed" value = "TWo" id = "Rate2">
+                            <label for="Rate2">2</label><br>
+                            <input type="radio" name = "feed" value = "Three" id = "Rate3">
+                            <label for="Rate3">3</label><br>
+                            <input type="radio" name = "feed" value = "Four" id = "Rate4">
+                            <label for="Rate4">4</label><br>
+                            <input type="radio" name = "feed" value = "Fivee" id = "Rate5">
+                            <label for="Rate5">5</label><br>
+                        </div>
+                        <br><br><br>
+                        <button>Send your message!</button>
+                    </form>
+                </div>
+</body>
+</html>

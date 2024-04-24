@@ -1,0 +1,16 @@
+.rad #yes:checked + label{
+    color: red;
+    font-weight:700 ;
+}
+.rad #no:checked+ label{
+    color: green;
+    font-weight:700 ;
+}
+input[type="radio"]:hover+label{
+    color: goldenrod;
+    font-weight: 800;
+}
+#no:hover+label{
+    color: rgb(103, 32, 218);
+    font-weight: bolder;
+}

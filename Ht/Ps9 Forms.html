@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ps 9 Forms</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form action="/Server">
+        <div>
+            <input type="text" placeholder="First Name" name = "fname">
+            <input type="text" placeholder ="Last Name" name ="lname">
+        </div>
+        <div>
+            <label for="gend">Please Select Gender</label>
+            <select name="gender" id="gend">
+                <option value="Tharki">Male</option>
+                <option value="fem">Aaurat</option>
+                <option value="others">Trans</option>
+                <option value="mmn" selected>Meko Malum Nahi</option>
+            </select>
+        </div>
+        <div>
+            Do You agree to all terms of service? 
+            <input type="checkbox" name="agr" id="agr" value="Yes">
+            <label for="agr">Yes, I agree</label>
+        </div>
+        <button>Register</button>
+    </form>
+    
+</body>
+</html>

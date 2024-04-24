@@ -1,0 +1,13 @@
+div{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    background-color: greenyellow;
+    margin: 10px auto;
+    box-shadow:12px 2px 8px black;
+    
+    /* X-Offset ---X se duri(Right)
+    Y- Offset ---Y se duri (Down)
+    Blur RAdius --- Blur kitna phelega
+    Color*/
+}

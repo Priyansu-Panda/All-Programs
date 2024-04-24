@@ -1,0 +1,12 @@
+div{
+    height: 200px;
+    width: 200px;
+    /* background-color: aqua; */
+    background-color: rgba(255,200,45, 1);
+
+}
+#h3{
+    background-color: yellowgreen;
+    opacity: 0.5;
+
+}

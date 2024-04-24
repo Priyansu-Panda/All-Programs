@@ -1,0 +1,24 @@
+div{
+    height: 200px;
+    width: 200px;
+    background-color: black;
+    padding: 1%;
+    transition:2s;
+    /* transition-duration: 0.1s;
+    transition-delay: 0.2s; */
+    /* New Animation */
+    margin: 0 auto;
+    margin-top: 10px;
+    /* transition: margin-top 2s ease-in 1s; */
+
+    
+}
+div:hover{
+    background-color: gold;
+    border-radius: 50%;
+    padding: 50px;
+    /* margin :99px */
+    /* New ANimation */
+    /* margin-top: 400px; */
+}
+

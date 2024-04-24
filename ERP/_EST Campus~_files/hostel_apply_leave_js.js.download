@@ -1,0 +1,286 @@
+$(document).ready(function(){
+	$('#leaveDateFrom').datepicker({
+	    format: "dd-M-yyyy",
+		todayHighlight:true,
+		autoclose:true
+	}).on('changeDate', function (ev) {
+	    $('#leaveDateTo').datepicker('setStartDate', $('#leaveDateFrom').val());
+	});
+	$('#leaveDateTo').datepicker({
+	    format: "dd-M-yyyy",
+		todayHighlight:true,
+		autoclose:true
+	}).on('changeDate', function (ev) {
+	    $('#leaveDateFrom').datepicker('setEndDate', $('#leaveDateTo').val());	    
+	});
+		
+	$("#leaveTimeFrom").timepicker({
+	   showInputs: false,
+	   minuteStep:5,
+	   showMeridian: false,
+	   showSeconds:false
+	});
+	$("#leaveTimeTo").timepicker({
+	   showInputs: false,
+	   minuteStep:5,
+	   showMeridian: false,
+	   showSeconds:false
+	});
+		
+	$("#btnNewLeave").click(function(){
+		$.ajax({
+	        url: "db_apply_leave.php?oper=CHECK_HOSTEL_FLAG",
+	        success: function (responsedata) {
+	        	var result = jQuery.parseJSON(responsedata);
+	            if(result.dbStatus == 'SUCCESS')
+	            {
+					$('#frmApplyLeave').data('bootstrapValidator').resetForm(true);																						
+					$('#leaveDateFrom').val('');				
+					$('#leaveDateTo').val('');				
+					$('#leaveTimeFrom').val('');				
+					$('#leaveTimeTo').val('');				
+					var mobile_no = $('#hidMobileNo').val();				
+					$('#txtContact_no').val(mobile_no);				
+					$('#hidLeaveApplicationId').val('');						
+					$("#applyLeaveModal").modal('show');										 							 			
+				}
+				else 
+				{
+					toastr.error(result.dbMessage);
+				}
+	        }
+	    });
+		
+		/*$('#frmApplyLeave').data('bootstrapValidator').resetForm(true);																						
+		$('#leaveDateFrom').val('');				
+		$('#leaveDateTo').val('');				
+		$('#leaveTimeFrom').val('');				
+		$('#leaveTimeTo').val('');				
+		var mobile_no = $('#hidMobileNo').val();				
+		$('#txtContact_no').val(mobile_no);				
+		$('#hidLeaveApplicationId').val('');						
+		$("#applyLeaveModal").modal('show');*/
+	});
+	
+	$('#frmApplyLeave').bootstrapValidator({
+		message: 'This value is not valid',
+        feedbackIcons: 
+        {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+		submitButtons: 'button[type="submit"]',
+		submitHandler: function(validator, form, submitButton) 
+		{
+			$("#btnApplyLeave").html('<i class="fa fa-gear fa-spin"></i> Saving...');
+			$("#btnApplyLeave").attr('disabled', true);						
+			
+			var oper;															
+			oper = 'APPLY_LEAVE';											
+							
+			var formData = new FormData(document.getElementById("frmApplyLeave"));
+				//alert(formData);
+				$.ajax({
+					url:"db_apply_leave.php?oper="+oper,
+					type:"post",
+					data:formData,
+					cache: false,
+			        contentType: false,
+			        processData: false,
+					success:function(responsedata){  
+						var result = jQuery.parseJSON(responsedata);
+			            if(result.dbStatus == 'SUCCESS')
+			            {		            								
+							toastr.success(result.dbMessage);
+				 			load_leave_applications();
+				 			$("#btnApplyLeave").html('<i class="fa fa-server"></i> Apply');
+							$("#btnApplyLeave").removeAttr('disabled');
+							$('#frmApplyLeave').data('bootstrapValidator').resetForm(true);	
+							$('#applyLeaveModal').modal('hide');															
+						}
+						else if(result.dbStatus == 'FAILURE')
+						{
+							toastr.error(result.dbMessage);
+							$("#btnApplyLeave").html('<i class="fa fa-server"></i> Apply');
+							$("#btnApplyLeave").removeAttr('disabled');														
+						}
+						else if(result.dbStatus == 'EXIST')
+						{
+							toastr.error(result.dbMessage);
+							$("#btnApplyLeave").html('<i class="fa fa-server"></i> Apply');
+							$("#btnApplyLeave").removeAttr('disabled');														
+						}
+					}
+				});																						
+		},
+		fields: {							
+			"leaveDateFrom":{
+				validators: {
+					notEmpty: {
+						message: 'Required'
+					}
+				}
+			},	
+			"leaveTimeFrom":{
+				validators: {
+					notEmpty: {
+						message: 'Required'
+					}
+				}
+			},				
+			"leaveDateTo":{
+				validators: {
+					notEmpty: {
+						message: 'Required'
+					}
+				}
+			},				
+			"leaveTimeTo":{
+				validators: {
+					notEmpty: {
+						message: 'Required'
+					}
+				}
+			},
+			"txtdestination":{
+				validators: {
+					notEmpty: {
+						message: 'Required'
+					}
+				}
+			},				
+			"txtContact_no":{
+				validators: {
+					notEmpty: {
+						message: 'Required'
+					}
+				}
+			},				
+			"txtLeaveReason":{
+				validators: {
+					notEmpty: {
+						message: 'Required'
+					},
+					stringLength: {
+	                    min: 20,
+	                    message: 'The leave reason must be greater than 20 characters'
+	                }
+				}
+			}
+		}
+	});
+	load_leave_applications();
+	
+	$('#tblLeaveHistory').DataTable({		
+		"sAjaxSource": "db_apply_leave.php?oper=SELECT_LEAVE_HISTORY_DETAIL",
+		"bPaginate": false,
+        "bLengthChange": true,
+        "bFilter": false,
+        "bSort":true,
+        "bInfo": false,
+        "bAutoWidth": false, 
+        "bRetrieve": true,        
+        "aoColumns": [
+			{ "sName": "Sl No"},
+			{ "sName": "leave_application_code",bVisible:false },
+			{ "sName": "student_code",bVisible:false },
+         	{ "sName": "student_name" ,bVisible:false },
+			{ "sName": "apply_date" }, 			        						            				 				 
+			{ "sName": "leave_days" },        						            				 				 			      						            				 				 
+			/*{ "sName": "from_time" },        						            				 				 
+			{ "sName": "to_date" },        						            				 				 
+			{ "sName": "to_time" },   */ 
+			{ "sName": "destination" },     						            				 				 
+			{ "sName": "phone_no" },        						            				 				 
+			{ "sName": "reason" },        						            				 				 
+			/*{ "sName": "leave_status" }*/
+			{"sName": "leave_status","sWidth": "10%",
+                "mRender": function( data, type, full ) {
+                	if(data == 'APPROVED')
+             			return '<span style="color:green;font-weight: 700;">'+data+'</span>';
+             		else if(data == 'PENDING')
+             			return '<span style="color:yellow;font-weight: 700;">'+data+'</span>';
+             		else if(data == 'REJECTED')
+             			return '<span style="color:red;font-weight: 700;">'+data+'</span>';
+             		else if(data == 'WITHDRAW')
+             			return '<span style="color:#049383;font-weight: 700;">'+data+'</span>';
+ 				}  
+ 			}        						            				 				 
+		]      	
+	});	
+	/* CODE FOR TOASTR */
+	toastr.options = {
+	  "closeButton": true,
+	  "debug": false,
+	  "progressBar": false,
+	  "positionClass": "toast-bottom-right",//top-right,bottom-left,top-left,top-full-width,bottom-full-width,top-center,bottom-center
+	  "onclick": null,
+	  "showDuration": "20000",
+	  "hideDuration": "1000",
+	  "timeOut": "5000",
+	  "extendedTimeOut": "1000",
+	  "showEasing": "swing",
+	  "hideEasing": "linear",
+	  "showMethod": "fadeIn",
+	  "hideMethod": "fadeOut"
+	}
+	/* END OF CODE FOR TOASTR*/	
+});
+function withdrawLeave(leave_application_id)
+{		
+	   	swal({
+	     title: 'Are you sure to withdraw Leave?',
+	     text: "",
+	     //type: 'warning',
+	     showCancelButton: true,
+	     confirmButtonColor: '#3085d6',
+	     cancelButtonColor: '#d33',
+	     confirmButtonText: 'Yes',
+	     animation: false
+	   }).then(function() {
+		var oper = 'WITHDRAW_LEAVE';
+			var datas={
+					leave_application_code:leave_application_id,	
+				};
+			$.ajax({
+		        url: "db_apply_leave.php?oper="+oper,
+		        data:datas,
+		        success: function (responsedata) {
+		        	var result = jQuery.parseJSON(responsedata);
+		            if(result.dbStatus == 'SUCCESS')
+		            {
+						toastr.success(result.dbMessage);
+						load_leave_applications();										 							 			
+					}
+					else if(result.dbStatus == 'FAILURE')
+					{
+						toastr.error(result.dbMessage);
+					}
+		        }
+		    });
+	   	},function(dismiss){
+	    //console.log(dismiss)
+	   }).done();						
+}
+function load_leave_applications()
+{
+	//var proxyuser_code = $('#hidproxyusercode').val()?$('#hidproxyusercode').val():'';
+	$("#divApplications").html("Loading Content...");
+	$("#divApplications").load("db_apply_leave.php?oper=SELECT_LEAVE_APPLICATION");
+}
+function view_leave_details(leave_application_code)
+{
+	$('#divModalLeaveStatus').modal('show');
+	$('#divStatusBody').html("Loading Content... <i class='fa fa-cog fa-spin></i>");
+	$.ajax({	
+		url:"db_apply_leave.php?oper=VIEW_LEAVE_DETAIL&leave_application_code="+leave_application_code,		
+		mType:"get",
+		success:function(response){  
+			$('#divStatusBody').html(response);					  			  	
+		},
+		error:function(){
+			alert("We are unable to Process.Please contact Support");
+		}
+	});
+}

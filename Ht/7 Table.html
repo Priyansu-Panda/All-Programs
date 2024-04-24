@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+</head>
+<body>
+    <section>
+    Food Menu
+    <table>
+        <tr>   <!--Table Row-->
+            <th>Item</th>    <!--Table Heading-->
+            <th>Amt.</th>      <!--Th will display in bold-->
+        </tr>
+        <tr>
+            <td>Samosa</td>    <!--Table Data-->
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Idli</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Sambar</td>
+        </tr>
+        <tr>
+            <td>Dosa</td>
+            <td>9</td>
+        </tr>
+    </table>
+</section>
+<hr>
+<section>
+    Food Menu
+    <table border = "green">
+        <tr>
+            <th>Item</th>
+            <th>Amt.</th>
+        </tr>
+        <tr>
+            <td>Samosa</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Idli</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Sambar</td>
+        </tr>
+        <tr>
+            <td>Dosa</td>
+            <td>9</td>
+        </tr>
+    </table>
+</section>
+
+<hr>
+<h3>Use of tbody &amp; thead</h3>
+<section>
+    Food Menu
+    <table border = "green">
+        <thead>
+        <tr>
+            <th>Item</th>
+            <th>Amt.</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Samosa</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Idli</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Sambar</td>
+        </tr>
+        <tr>
+            <td>Dosa</td>
+            <td>9</td>
+        </tr>
+    </tbody>
+    </table>
+</section>
+
+<hr>
+
+<section>
+    without using colspan and rowspan <br>
+    Food Menu
+    <table border = "green">
+        <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+            <th>INR</th>
+            <th>USD</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Samosa</td>
+            <td>3</td>
+            <td>0.3</td>
+        </tr>
+        <tr>
+            <td>Idli</td>
+            <td>6</td>
+            <td>0.6</td>
+        </tr>
+        <tr>
+            <td>Sambar</td>
+            <td>0.7</td>
+        </tr>
+        <tr>
+            <td>Dosa</td>
+            <td>9</td>
+            <td>0.9</td>
+        </tr>
+    </tbody>
+<br>
+with using colspan and rowspan <br>
+    </table>
+    Food Menu
+    <table border = "green">
+        <thead>
+        <tr>
+          <th rowspan="2">Item</th>
+          <th colspan="2">Price</th>
+        </tr>
+        <tr>
+            <th>INR</th>
+            <th>USD</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Samosa</td>
+            <td>3</td>
+            <td>0.3</td>
+        </tr>
+        <tr>
+            <td>Idli</td>
+            <td>6</td>
+            <td>0.6</td>
+        </tr>
+        <tr>
+            <td>Sambar</td>
+            <td></td>
+            <td>0.7</td>
+        </tr>
+        <tr>
+            <td>Dosa</td>
+            <td>9</td>
+            <td>0.9</td>
+        </tr>
+    </tbody>
+    </table>
+</section>
+
+
+</body>
+</html>

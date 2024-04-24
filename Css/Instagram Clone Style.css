@@ -1,0 +1,77 @@
+body{
+    margin:0;
+    background-color: white;
+}
+
+
+.main{
+    display : flex;
+    font-family: 'Montserrat', sans-serif;
+font-family: 'Noto Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+}
+
+.main-content{
+    display: flex;
+}
+.slidebar{
+    background-color: black;
+    width: 15.25rem;
+    height: 100vh;
+    padding: 0.5rem  0.75rem 1.25rem;
+}
+.logo{
+    width:13rem;
+    height: 4.5rem;
+    padding: 1.5rem 0.75rem 0.4rem;
+}
+.logo img{
+    width: 9rem;
+    height: 3rem;
+    background: black;
+    position: fixed;
+}
+.nav{
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space; */
+    position: fixed;
+    /* overflow: clip; */
+    
+}
+.nav-text{
+    font-size: 1rem;
+    font-weight: 550;
+    height: 1.25rem;
+    padding: 1rem;
+    margin:2px 0;
+}
+
+.stories{
+    background-color: red;
+    width :39rem;
+    height:6.3rem;
+    position: fixed;
+    top: 0;
+}
+
+
+
+
+
+
+.follow-list{
+    background-color: black;
+    height: 100%;
+    width: 24rem;
+}
+
+
+
+
+.content{
+    background-color: blue;
+    width :39rem;
+    overflow: auto;
+}

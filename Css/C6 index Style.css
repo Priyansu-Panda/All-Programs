@@ -1,0 +1,33 @@
+h2{
+    color: rgb(205, 138, 50);
+}
+span{
+    color: rgb(134, 79, 7);
+}
+
+.card{
+    height: 500px;
+    width: 425px;
+    border: 2px solid black;
+    border-radius: 25px;
+    display: inline-block;
+    margin-left: 180px;
+}
+img{
+    /* height:200px;
+    width:403px;
+    margin: 10px; */
+    /* border: 1px solid black; */
+    /* border: 1px solid rgb(00,00,00,0.3);
+    border-radius: 9px; */
+    /* padding: 10px; */
+    width: 100%;
+    border-radius: 25px;
+}
+h3,p{
+    padding: 0 8px 0 12px ;
+}
+h4{
+    text-align: right;
+    color: green;
+}

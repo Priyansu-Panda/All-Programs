@@ -1,0 +1,107 @@
+pwd --> shows the current working directory
+cd 
+cd ..
+ls
+ls -a /ls -la  // to display hidden files     //.git ---> shows that its a git file 
+clear
+
+
+git --version ---> Shows the version 
+git ---> shows the git commands
+
+//config : Storing all our details in git 
+
+git config --global user.name "Your name"
+git config --global user.email "someone@gamil.com"
+git config --list --> shows the all the updates  of the users
+
+// Our device is a local device  so it will not have any remote repository to connect with. So we need to create one 
+
+
+//Clone : Cloning a repository on our local machine 
+git clone <-some link->
+
+//Status  : Shows the state of the code 
+git status
+
+//modified --> add {Staged}--> commit {final state}
+
+//add : adds new or changed files in ur working directory to the git staging area 
+git add <-file name ->
+//      OR 
+git add .   // this will add all the files
+
+
+//commit : it is the record of change  
+git  commit -m "<Some Message>"
+
+//log : It will show the history of commits made by you 
+git log 
+
+//push : upload local repo content to remote repo{jahan se laye the}
+git push origin main
+
+//origin --> woh location jahan github ki repo hai / jahan se sare files laye the 
+//main --> branch ko jo kya de
+
+// Manier times it may not be that humai starting files hum github mein na bana kar hum local machine mein bana rahe ho 
+// so the desired folder a git repo use --> init 
+
+//init : used to create a new git repo
+git init
+//now we can use the git  command sin that file or folder ---> add, push , commit , log, status etc..
+
+// to identify a git repo --> hidden file --> .git
+
+git remote add origin <-Link->      // Remote jahan pe hum humata code push karna chahate hain ... so we name it as origin 
+
+git remote -v // to Verify Remote       // jahan se bheja jayega ya jahan pe pull kiya jayega 
+
+git branch // to check branch 
+git branch -M main // To rename Branch    // name after -M
+
+//then use 
+git push origin main
+
+
+git push origin main /OR/ git push -u origin main --->> -u --> upstream ---> we are setting an upstream and defining the origin (Kahan pe jane wala hai after push) for our current branch / repo. 
+
+git push -u origin main   // after this only write git push     // jiss current dirrectory mein hoge then baar baar git push origin main likhna nahi padega can write git push
+
+
+// JAb bhi hum bas ek hi file modify karte hain (NO TRACKED FILES ---NEW FILES ) then we can ADD and COMMIT SImultaneously  ---
+git commit -am "UR MESSAGE"
+
+//GITHUB : Code Changes > Commit
+//local git : Code Changes --> Add (Stage A change )--> commit (Save a change)(comit changes)--> Push
+
+// to Viwe the status ---> git status
+
+
+git branch      // To display branches 
+
+git checkout <-branch name->    // To navigate betwn branches 
+
+git checkout -b  <new_branch>     //To Create and Navigate to a new branch at once
+
+git branch -d  <branchname>       //to delete a branch
+
+//If Any changes made in  a new branch and pushed from it then it wont work ... because 
+
+
+// It is necesssary to set a upstream branch after createing anew branch to push to github 
+
+//git push will work in main but not i new branch 
+// to make it work use    
+ git push --set-upstream origin <-Branch Name->
+ 
+
+
+
+
+
+
+
+
+win + Alt+ R ____ Win + g
+win + V // Clipboard

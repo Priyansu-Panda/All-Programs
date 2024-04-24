@@ -1,0 +1,66 @@
+#face{
+    height: 600px;
+    width: 600px;
+    background-color: yellow;
+    border: 2px solid black;
+    border-radius: 50%;
+
+    box-shadow: 12px 12px 25px;
+}
+#mouth{
+    height: 120px;
+    width: 300px;
+    background-color: brown;
+    border: 2px solid black;
+    border-radius: 0 0 96px 96px;
+    /* transform: translate(150px, 380px); */
+    position: absolute;
+    top: 380px;
+    left :150px;
+
+    /* transition: 1s; */
+}
+#r-eye,#l-eye{
+    height: 120px ;
+    width: 120px  ;
+    background-color: black;
+    border-radius: 50%;
+
+    display: inline-block;
+
+    position: absolute;
+    top: 115px;
+    left: 130px;
+/* USE OF TRANSFORM MESSES WITH THE MOUTH */
+
+    transition: 1s;
+
+}
+#r-eye{
+    /* transform: translate(150,75px); */
+    left: 350px;
+}
+
+#r-eye:hover{
+    background-color: black;
+    /* border: 2 px solid black; */
+    height:60px;
+    border-radius: 0 0 96px 96px;
+    margin-top: 55px;
+    /* padding-top: 0.6em; */
+
+}
+#l-eye:hover{
+    background-color: black;
+    /* border: 2 px solid black; */
+    height:60px;
+    border-radius: 0 0 96px 96px;
+    margin-top: 55px;
+    /* padding-top: 0.6em; */
+
+}
+#mouth:hover{
+    background-color: brown;
+    height:10px;
+    border-radius: 0;
+}

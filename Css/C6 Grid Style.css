@@ -1,0 +1,138 @@
+div.container{
+    width: 800px;
+    height: 400px;
+    background-color: yellow;
+    /* display: flex; */
+    display: grid;
+    /* Whwnever we use grid then the containeer becoems grid container and the items inside it becomes grid items & grid will make the elements place in Rows and Columns */
+
+    /* And now we can set the no. of ROws  */
+
+    /* display: inline-grid; */
+
+    /* GRid Template --- Lines KItna hoga & Lines ke beech mein space kitna hoga */
+    grid-template-rows: 10px 10px 70px 20px 60px;
+    grid-template-rows: auto auto ;
+    /* grid-template-rows: repeat(3, 1fr); */
+    /* grid-template-columns: repeat(4, 1fr); */
+    
+    /* grid-template: 10px;    Nothing happens*/
+    
+    grid-template-columns: 10px 150px 60px 50px;
+
+    /*n times auto---equally divide wdith among n places(columns/rows) */
+    /* 1auto ---> 1 column/row */
+
+    grid-template-columns: auto auto auto auto;
+    /* here it creates 4 columns */
+
+    /* 1fr ---> 1 fraction of the 100%(available spaces) width/column spaces */
+    /* grid-template-rows: repeat(3,1fr); */
+    /* here it creates 3 rows */
+    /* OR */
+    grid-template-rows: 1fr 1fr 1fr;
+
+    /* row-gap: 10px; */
+    /* column-gap: 50px; */
+    /* ROWS Columns (x y)*/
+    /* grid-gap:20px 60px; */
+
+    /* gap equal for both col & rows */
+    /* grid-gap:20px ; */
+
+    /* justify-items: start; */
+    /* justify-items: end; */
+    /* justify-items: center; */
+
+    /* align-items: start; */
+    /* align-items: end; */
+    /* align-items: center; */
+
+    /* place-items: center; */
+}
+div.container{
+    width: 800px;
+    height: 400px;
+    background-color: yellow;
+    /* display: flex; */
+    display: grid;
+    /* Whwnever we use grid then the containeer becoems grid container and the items inside it becomes grid items & grid will make the elements place in Rows and Columns */
+
+    /* And now we can set the no. of ROws & no. of Columns using grid ...we call it tracklines (grid-template-columns/rows) and using this we can find out where is our row and columns lines are being formed  */
+
+    /* display: inline-grid; */
+
+    /* GRid Template --- Lines KItna hoga & Lines ke beech mein space kitna hoga */
+    grid-template-rows: 10px 10px 70px 20px 60px;
+    grid-template-rows: auto auto ;
+    /* grid-template-rows: repeat(3, 1fr); */
+    /* grid-template-columns: repeat(4, 1fr); */
+    
+    /* grid-template: 10px;    Nothing happens*/
+    
+    grid-template-columns: 10px 150px 60px 50px;
+
+    /*n times auto---equally divide wdith among n places(columns/rows) */
+    /* 1auto ---> 1 column/row */
+
+    grid-template-columns: auto auto auto auto;
+    /* here it creates 4 columns */
+
+    /* 1fr ---> 1 fraction of the 100%(available spaces) width/column spaces */
+    /* grid-template-rows: repeat(3,1fr); */
+    /* here it creates 3 rows */
+    /* OR */
+    grid-template-rows: 1fr 1fr 1fr;
+
+
+    /* grid-gaps---> defines the gap betwn the lines  */
+
+    row-gap: 10px;
+    column-gap: 50px;
+    /* ROWS Columns (x y)*/
+    grid-gap:20px 60px;
+
+    /* gap equal for both col & rows */
+    /* grid-gap:20px ; */
+
+    /* grid columns --->Defines an item starting and ending position inside a column */
+
+/* Justify---> Horizontally inside the cell */
+    /* justify-items: start; */
+    /* justify-items: end; */
+    /* justify-items: center; */
+
+/* Align ---> Vertically inside the cell */
+    /* align-items: start; */
+    /* align-items: end; */
+    /* align-items: center; */
+
+/* Place--- Align & Justify ka kamm dono ek saath karta hai (i.e Works Diagonally) */
+    /* place-items: center; */
+}
+.item{
+    /* width: 100px;
+    height:50px; */
+    background-color: greenyellow;
+    border: 2px solid red;
+    text-align: center;
+}
+#one {
+    /* Start from 1 end till line 4*/
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    /* grid-column: 1/4 ;
+    grid-column: 1/span 3; */
+
+    /* justify-self: end; */
+
+    /* place-self: end; */
+}
+#two{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-row:1/span 3;
+    /* place-self: start; */
+}
+

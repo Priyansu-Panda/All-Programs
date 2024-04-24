@@ -1,0 +1,33 @@
+h3{
+    text-align:  left;
+    text-decoration: magenta underline;
+    text-decoration: red double underline;
+    text-decoration-style: wavy;
+    text-decoration: red double overline;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+h1{
+    text-align: center;
+    text-decoration: wavy   red  underline;
+    font-family: Arial, Helvetica, sans-serif ;
+}
+a{
+    text-decoration: none;
+    font-size: larger;
+    font-weight: 699;
+}
+p{
+    text-align: justify;
+    text-align: center;
+    /* text-align: left;    jo last mein hoga it will be followed */
+    text-decoration: dashed gray underline;
+    font-weight: 969 ;
+    font-size: large;   /*CAN BE WRITEEN IN PIXELS*/
+    line-height: 2.6;
+    /* line-height: normal; */
+    letter-spacing: 10px;
+    /* letter-spacing: 6px; */
+    /* letter-spacing: normal; */
+    font-size: 20px;
+
+}

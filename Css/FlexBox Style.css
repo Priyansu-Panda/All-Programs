@@ -1,0 +1,51 @@
+#container{
+    height: 300px;
+    width: 80%;
+    background-color: azure;
+    margin: 10px auto;
+    border: 2px solid black;
+    /* display :inline ; */
+    display :flex;
+    /* flex-direction: row; */
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column; */
+    /* flex-direction: column-reverse; */
+
+    /* justify-content: flex-start; */
+
+    /* Flex end --- Changes direction across main axis - OR shift the content in END side keeping the arrangement CONSTANT*/
+    /* justify-content: flex-end; */
+    /* justify-content: center; */
+    
+    /* Justify-Content distributes space content across main axis */
+    /* justify-content: space-between; */
+    /* justify-content: space-around; */
+    /* justify-content: space-evenly; */
+
+    /* Flex Wrap ensure taht the actal width size is maintained, so if all the content doesnt fit inside the container it will wrap/shift it to the next line  */
+    /* flex-wrap:nowrap ; */
+    /* flex-wrap:wrap ; */
+
+    /* Wrap-reverse --- Changes direction of content across Cross axis | */
+    /* flex-wrap:wrap-reverse ; */
+
+    /* ELEMENTS WILL MOVE IN CROSS AXIS only when SPACE is present betwn them */
+    /* align-items: flex-start;
+    align-items: flex-end;
+    align-items: center;
+    align-items: baseline; */
+
+}
+h1{
+    text-align: center;
+}
+div{
+    height: 100px;
+    width: 100px;
+    color:white;
+    text-align: center;
+    font-size: 1.5rem;
+}
+/* div div{
+    display :inline-block;
+} */

@@ -1,0 +1,8 @@
+#myId p{
+    color: green;
+
+}
+/* Class and id are atrributes     input[type ="attribute"]*/
+div[id = "myId"] p{     
+    color: green;
+}

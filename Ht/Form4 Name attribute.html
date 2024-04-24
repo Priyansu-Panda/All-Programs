@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name attribute</title>
+</head>
+<body>
+    <form action="/action">
+
+        <div>
+            <label for ="naam">Username</label>
+            <input type="text"
+            placeholder ="Enter Name" 
+            id = "naam"
+            name = "quer">   <!--name is naming the <input type>  Use for the url-->
+        </div>
+        <div>
+            <label for="pass">Password:</label>
+            <input type ="password"
+            placeholder="Enter Password" 
+            id ="pass" 
+            name = "passu">    <!--could be double quotes or not-->
+        </div>
+        <!--<button>Submit</button>-->
+        <!--<button type ="submit" value="submiit"></button>  //Doesent work this way -->
+        <button type = "submit">Submmiitt</button>
+    </form>
+    <hr>
+    <form action="https://www.youtube.com/results">
+        <label for="search"></label>
+        <input type="text" placeholder="Swaerch ur querry" id ="search" name ="search_query">
+        <button>searrch</button>
+    </form>
+</body>
+</html>

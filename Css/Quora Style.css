@@ -1,0 +1,113 @@
+h1,h3{
+    color: rgb(178, 21, 21);
+}
+
+#login{
+    background-color: grey;
+    /*color: white;  /*text color*/
+}
+#signup{
+    background-color: red;
+    color: white;  /*text color*/
+}
+
+.upvote{
+    background-color: green;
+    color: aliceblue;
+}
+/* button.upvote{     [Same]
+    background-color: green;
+    color: aliceblue;
+} */
+
+
+/* Descendant Selector */
+/* p a{
+    color: purple;
+    background-color: yellow;
+} */
+.post a{
+    color: purple;
+    background-color: yellow;
+}
+/* 
+nav ul li a {
+    color: hotpink;
+} */
+
+nav a {
+    color: hotpink;
+}
+
+p+h3{
+    text-decoration: underline;
+}
+
+.upvote + button{   /* Sibling Combinator */
+    border-color: cornflowerblue;
+    background-color: rgb(100, 237, 152);
+}
+div>input{   /*child descendant*/
+    background-color: rgba(237, 9, 9, 0.675);
+}
+input[type="text"]{
+    color: red;
+}
+input[type="password"]{
+    color:yellow;
+}
+input[type]{
+    background-color: aqua;
+}
+/* Pseudo Class   element:precedors */
+
+button:hover{
+    background-color: black;
+    color: yellow;
+}
+h3:hover{
+    text-decoration: line-through;
+}
+button:active{
+    background-color: hotpink;
+    color: rgb(72, 0, 255);
+}
+p:active{
+    font-weight: bold;
+    color: green;
+}
+input[type="radio"]:hover+label{
+    font-weight: bold;
+}
+input[type="radio"]:checked+label{
+    font-weight: bolder;
+    color: blue
+}
+/* Pseudo Element    element:: */
+h1::first-letter{
+    color: green;
+}
+p::first-line{
+    background-color: rgb(89, 50, 205);
+    border-color: rgb(0, 255, 64);
+}
+p::selection{
+    background-color: yellowgreen;
+    border-color: red;
+}
+
+
+/* id > class > Element
+more selectors > less Selectors
+if SPECIFICITY same ----> CASCADING 
+inline style >>> Specofocity id > class > Element */
+
+div{
+    background-color: yellow;
+}
+input{
+    background-color: inherit;
+}
+button{
+    background-color: inherit;
+}

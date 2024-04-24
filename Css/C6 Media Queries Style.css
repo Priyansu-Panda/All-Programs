@@ -1,0 +1,40 @@
+h1{
+    background-color: aqua;
+    border: 2px solid balck;
+}
+/* @media(width:450px){ */
+@media(min-width:450px){
+    h1{
+        background-color: blue;
+        color: aliceblue;
+    }
+    div {
+        height: 100px;
+        width: 100px;
+        background-color: blueviolet;
+    }
+}
+@media(max-width:170px){
+    h1{
+        background-color: black;
+        color: aliceblue;
+    }
+    div {
+        height: 100px;
+        width: 100px;
+        background-color: blue ;
+    }
+}
+/* and ke aju baju mein space rahega */
+@media(min-width:200px) and (max-width:300px){
+
+    h1{
+        background-color: blue;
+    }
+}  
+@media(orientation:landscape){
+    h1{
+        background-color: greenyellow;
+        color: red;
+    }
+}
