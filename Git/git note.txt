@@ -82,17 +82,15 @@ git branch      // To display branches
 
 git checkout <-branch name->    // To navigate betwn branches 
 
-git checkout -b  <new_branch>     //To Create and Navigate to a new branch at once
+git checkout -b  <new_branch_name>     //To Create and Navigate to a new branch at once
 
 git branch -d  <branchname>       //to delete a branch
 
 //If Any changes made in  a new branch and pushed from it then it wont work ... because 
-
-
-// It is necesssary to set a upstream branch after createing anew branch to push to github 
+// It is necesssary to set a upstream branch after createing a new branch to push to github 
 
 //git push will work in main but not i new branch 
-// to make it work use    
+// to make the push function work in other branch :-    
  git push --set-upstream origin <-Branch Name->
  
 
