@@ -55,7 +55,7 @@ git init
 
 git remote add origin <-Link->      // Remote jahan pe hum humata code push karna chahate hain ... so we name it as origin 
 
-git remote -v // to Verify Remote       // jahan se bheja jayega ya jahan pe pull kiya jayega 
+git remote -v // to Verify Remote  //remote dhang se set hua hai ya nahi     // jahan se bheja jayega ya jahan pe pull kiya jayega 
 
 git branch // to check branch 
 git branch -M main // To rename Branch    // name after -M
