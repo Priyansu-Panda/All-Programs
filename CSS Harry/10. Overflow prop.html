@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overflow</title>
+    <style>
+        .box{
+            width: 30vw;
+            height: 40vw;
+            border: 2px solid black;
+            overflow: scroll;
+            overflow: auto;
+            overflow-y: scroll;
+            overflow-x: scroll;
+            /*white-space: nowrap;*/   /*Neeche text ko girne nahi dega */
+            text-overflow: ellipsis;
+            overflow: visible;      /*box ke bahar sab dikhega */
+            overflow: hidden;       /*No scroll bar */
+            overflow: hidden auto;    /*x,y*/
+            
+            
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      Lorem, ipsum dolor. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Officia ipsa laudantium optio eos illo doloremque ad quo aperiam
+      quod? Quidem facilis accusamus quaerat soluta eum atque eveniet iusto
+      harum, quibusdam distinctio sapiente animi?
+    </div>
+  </body>
+</html>

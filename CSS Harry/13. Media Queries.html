@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEdia Queroies </title>
+    <style>
+        body{
+            background-color: red;
+        }
+        @media  screen and (orientation: landscape)  {
+            .body{
+                border: 5px solid purple;
+            }
+            
+        }
+
+        @media only screen and (max-width: 455px) {     /*Will affect only inside 455px*/
+            body{
+                background-color: blue;
+            }
+            .boxes{
+                flex-direction: column;     /*Convert them to columns from rows */ 
+            }
+        }
+
+        .boxes{
+            display: flex;      /*Will be responsive jab screen shota karemnge it will shrink*/ 
+        }
+
+
+        .box{
+            width:344px;
+            height: 344px;
+            background-color: steelblue;
+            padding: 3px;
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Hey i am a red guy
+    </div>
+    <div class="boxes">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>

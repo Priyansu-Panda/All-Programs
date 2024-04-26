@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: black;
+        }
+        div *{
+            color: rgb(7, 7, 7);
+            background-color: black;
+        }
+        /*.box:hover::first-letter{*/
+        .box:hover::first-line{
+            color: rgb(165, 42, 42);
+            font-size: 5.5em;
+            transition: 1.5s;
+        }
+        ::selection{
+            color: gold;
+            font-size: 6.5em;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="box">I</div>
+        <div class="box">Love</div>
+        <!-- <div class="box">You</div> -->
+        <div class="box">U</div>
+        <div class="box">&hearts;</div>
+
+        <div class="box">KANPRI</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS LISTS </title>
+    <style>
+        nav li {
+            list-style: devanagari;
+            background-color: yellow;
+            border: 2px solid black;
+            list-style-position: inside;  /*Backgroud / border sab kuch poore pe lagaya jayega */
+            list-style-image: url("https://www.w3schools.com/cssref/smiley.gif");
+            list-style-type: "😋";
+            list-style: inside url("https://www.w3schools.com/cssref/smiley.gif");      /*Priority than emoji*/
+            list-style: none;   /*Sab kuch udd jayega */
+            padding: 40px;
+            margin: auto;
+        }
+        ul{
+            display: flex;      /*Jo neeche vertically tha now will be arranged horizontally*/
+            /*margin: 3em;
+            padding: 30px;  will set for entire ul*/
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+</body>
+</html>

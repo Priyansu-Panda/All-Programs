@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.jersey-25-regular {
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+:root{
+    --colour:blue;
+    --textcolor:white;
+    --secolor:rgb(74, 74, 161);
+    --defpad:12px 20px;
+    
+}
+
+body{
+    background-color: var(--secolor);
+}
+
+ul{
+    /* display: flex; */
+    /* list-style-type: none; */
+    
+}
+
+ul li {
+    display: inline;    
+    list-style-type: none;
+
+    font-weight: bolder;
+    font-size: larger ;
+    font-style: italic ;
+    /* color: white; */
+    padding: var(--defpad) ;
+    
+}
+
+ul li a{
+    color:var(--textcolor);
+    text-decoration: none;
+}
+.nav{
+    
+    background-color: var(--colour);
+    padding: var(--defpad) ;
+}
