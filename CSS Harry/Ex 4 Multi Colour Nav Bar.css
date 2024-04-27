@@ -21,11 +21,11 @@ body{
     background-color: var(--secolor);
 }
 
-ul{
-    /* display: flex; */
-    /* list-style-type: none; */
+/* ul{
+    display: flex;
+    list-style-type: none;
     
-}
+} */
 
 ul li {
     display: inline;    

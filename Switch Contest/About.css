@@ -1,0 +1,48 @@
+body{  /*If require we will make changes*/
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    margin: 0rem;
+    overflow: hidden;
+    color:beige
+}
+h1{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    transition: all 2s ease;
+}
+h1:hover{
+    transform: scale(1.2);
+    border: 2px solid whitesmoke;
+    /* width: 50px; */
+    /* padding: 1vmin; */
+    /* margin: 1vmin; */
+    /* margin: 1rem; */
+
+}
+p{
+    font-size: large;
+    border: 2px solid whitesmoke;
+    /* padding: 1vmin;
+    margin: 1vmin;   */
+    width: 60%;
+    padding-left: 2rem;
+    margin-left: 12rem;
+    
+}
+
+#image-track> .image{
+    width: 40vmin;
+    height:56vmin;
+    object-fit: cover;
+    object-position: center center;
+}
+
+#image-track{
+    display: flex;
+    gap:4vmin;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(0%,-50%);
+}
