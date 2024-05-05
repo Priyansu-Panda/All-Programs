@@ -30,7 +30,7 @@ create(){
         new1 -> data = n;
         new1->add= NULL;
         temp->add = new1;
-        temp= temp>add;
+        temp= temp->add;    //Now temp is pointing to new1 node
         printf("Do u Want To Cntinue??\n");
         scanf(" %c", &ch);
     }
@@ -80,7 +80,7 @@ void insertAtEnd(){
         while (temp->add!=NULL){
             temp = temp->add;
         }
-        temp->add = new1;
+        temp->add = new1;       //Once reached to the final node then add/connect the new node in the final node
     }
 }
 
@@ -95,8 +95,10 @@ void insertAtMiddle(){
         new1 = (struct node*)(malloc(siizeof(struct node)));
         new1->data = n;
         new1->add = NULL;
+
         printf("Enter the position\n");
         scanf("%d",&pos);
+
         next = start;
         while (i<pos){
             prev = next;
@@ -141,9 +143,9 @@ void deleteLast(){
             temp= temp->add;
         }
     // Delete the last node
-        prev->add=NULL;
+        prev->add=NULL;     //first detach the node
         printf("\nElement %d is Deleted \n",temp->data);
-        free(temp);
+        free(temp);     //delete the node from memory
     }
 }
 

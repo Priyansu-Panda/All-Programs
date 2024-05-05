@@ -8,21 +8,18 @@ struct node{
 };
 // struct node* temp,*head =NULL,*tp;
 
-
-
-
 struct node* addEmpty(struct node* head, int data){     //Creation of a node (at the beginning)
     struct node* temp= (struct node*)malloc(sizeof(struct node));
     temp->prev=NULL;
     temp->data=data;
     temp->next=NULL;
 
-    temp->next = head; // Connect the new node's next pointer to the current head
+    // temp->next = head; // Connect the new node's next pointer to the current head
 
-    // Update the previous head's prev pointer if it exists
-    if (head != NULL) {
-        head->prev = temp;
-    }
+    // // Update the previous head's prev pointer if it exists
+    // if (head != NULL) {
+    //     head->prev = temp;
+    // }
 
     // Update head to point to the new node
     head = temp;
@@ -36,7 +33,7 @@ struct node* addAtEnd(struct node* head,int data){
     temp->prev = NULL;
     temp->data = data;
     temp->next = NULL;
-    
+
     tp = head ;
     while(tp->next!=NULL){
         tp = tp->next;
@@ -59,9 +56,8 @@ struct node* delLast(struct node* head){        //OR u can declare it externally
         // prev = temp;
         temp = temp->next;
     }
-    prev = temp->prev;
+    prev = temp->prev;      //pointa prev pointer to the previous node
     prev->next = NULL;
-
     free(temp);
     return head;
 };
