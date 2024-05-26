@@ -1,3 +1,5 @@
+// If str = reversestr --> Pallindrome
+
 
 #include<iostream>
 using namespace std;
@@ -39,7 +41,7 @@ char toLowerCase(char ch){
 //     return ch;
 // }
 
-bool checkPallindrome(string a){
+bool checkPallindrome(string a){    // not char a
     int s = 0;
     int e = a.length()-1;
 
@@ -67,17 +69,18 @@ bool isPallindrome(string s){
     // Check Valid String 
     for(int i = 0; i<s.length(); i++){
         // if(s[i] >= 'a' && s[i] <= 'z'){
-        //     temp += s[i];
+        //     temp += s[i];    // this appending / concatenate format only applicable for string datatype
         // }
 
         // if valid then ussey ek temp variable mein store karo anly valid characters no other nonsense
-        if(isvalid(s[i])){          //if false then andar mat jao,age badho 
+        if(isvalid(s[i])){      //if true then store    //if false then andar mat jao,age badho 
             temp.push_back(s[i]);   //temp.push_back() = s[i];  wrong 
         }
     }
+    cout <<"Ur temp is :"<< temp <<endl;
+
     // To lower case
     for(int i = 0; i<temp.length(); i++){
-        // temp[i] = toLowerCase(temp[i]);
         temp[i] = toLowerCase(temp[i]);
     }
 
@@ -94,7 +97,7 @@ int main()
 
     string s ;
     cout << "Enter string "<< endl;
-    // cin >> s;
+    // cin >> s;    //wrong bas ek word conider karega 
     getline(cin,s);   // Use getline to accept multiple words
     // to allow the user to input multiple words, you should use getline(cin, s); instead of cin >> s;. This will allow the user to input a string containing spaces, which will be treated as a single string.
 
@@ -113,3 +116,29 @@ int main()
  
     return 0;
 }
+
+
+// diff betwn char array 
+
+// length ---> str.length()
+// str.push_back('a')
+// str.pop()
+
+
+//// APpending  in char 
+
+// int main() {
+//     char s[] = "Hello!123World";
+//     char temp[100] = ""; // Define temp as an empty character array
+
+//     // Check Valid Characters
+//     int j = 0;
+//     for(int i = 0; s[i] != '\0'; i++) {
+//         if(s[i] >= 'a' && s[i] <= 'z') {
+//             temp[j++] = s[i]; // Append valid characters to temp
+//         }
+//     }
+//     temp[j] = '\0'; // Null terminate the resulting string
+
+//     // Print the result
+//     cout << "Valid characters in the string: " << temp << endl;

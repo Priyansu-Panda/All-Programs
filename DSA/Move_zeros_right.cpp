@@ -25,7 +25,7 @@ void moveZ(int arr[],int arr2[], int n){
 
     for(int j = 0; j<n; j++){
         if(arr[j]!=0){
-            swap(arr[j], arr[i]);
+            swap(arr[j], arr[i]);   // j will be > i .. i will contain 0 when j proceed so when !=0 then swap with the)th Ellment
             i++;
         }
     }

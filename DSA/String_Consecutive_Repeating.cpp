@@ -47,8 +47,8 @@
 using namespace std;
  
 int compress ( char chars[]){
-    int i = 0;
-    int ansIndex = 0;
+    int i = 0;      //for traversing the entire vector
+    int ansIndex = 0;   //chars ka elements and counts kahan dalun for counting purpose
     int n = chars.size();
 
     while(i<n){
@@ -56,6 +56,9 @@ int compress ( char chars[]){
         if ( j<n && chars[i] == chars[j]){
             j++;
         }
+        // iske bahar nikle ho ... matlab 
+        // u got a new/ diff char encounter kiye ho {Unequal}
+        // u have traversed the entire array {Also Sab Same nikle}
 
         // oldChar ko dalo
         chars[ansIndex++] = chars[i];
@@ -68,9 +71,11 @@ int compress ( char chars[]){
                 chars[ansIndex++] = ch;
             }
         }
+        // Moving to anew or diff character 
         i=j;
     }  
-    return ansIndex;
+    // return i;
+    return ansIndex;    //returns the size  
 }
 
 

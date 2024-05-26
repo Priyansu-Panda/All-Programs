@@ -26,18 +26,19 @@ int getMaxCharacter(string s){
 
     // finding max charcter 
     int maxi = -1, ans = 0;
-    for(int i = 0; i<s.length(); i++){
-    // for(int i = 0; i<26; i++){
+    // for(int i = 0; i<s.length(); i++){
+    for(int i = 0; i<26; i++){
         if(maxi<arr[i]){    // find max by comparing its value with the value inside the array
             ans=i;
             maxi=arr[i];
         }
     }
-    // int finalAns =  'a' + ans;
-
     // char finalAns =  'a' + ans;     // doesnt matter what data type it is , the return type depends on the type of function  
+
+    // int finalAns =  'a' + ans;
     // return finalAns;
-    return 'a' + ans;
+
+    return 'a' + ans;   //for lowercase
 }
 
 
@@ -45,7 +46,8 @@ int main()
 {
     cout << "Enter the text " <<endl;
     string s;
-    cin>> s;
+    // cin>> s;
+    getline(cin,s);
     cout << getMaxCharacter(s) << endl;
 
     return 0;

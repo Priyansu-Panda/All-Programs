@@ -1,6 +1,16 @@
 #include<iostream>
 using namespace std;
 
+char toLowerCase (char ch){
+    if (ch >= 'a' && ch <= 'z'){
+        return ch;
+    }
+    else{
+        char temp = ch - 'A' + 'a';
+        return temp;
+    }
+}
+
 bool checkPallindrome(char a[], int n){     // without creating another variable .... chceking in the same variable 
     //We took 2 pointers --> one at start one at end
     // now compared s & e if equal then continue , else niklo yeh woh nahi hai 
@@ -8,7 +18,8 @@ bool checkPallindrome(char a[], int n){     // without creating another variable
     int e = n-1;
 
     while(s<e){
-        if (a[s] != a[e]){
+        // if (a[s] != a[e]){
+        if ( toLowerCAse(a[s]) != toLowerCAse(a[e])){
             return 0;   //false
         }else{
             s++;
@@ -106,7 +117,7 @@ int main()
 
 
 
-
+// Method 2
 
 
 /*

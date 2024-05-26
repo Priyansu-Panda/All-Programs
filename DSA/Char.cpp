@@ -1,11 +1,28 @@
-// Char arry -> copy -> strcpy(destination,source) 
-// string -> copy -> str1 = str2
+/*
+like in int cin >> n 
+int arr[20]
+cin >> arr[i]   // iteratively enter values 
 
-// char arry -> length -> strlen(arr)
-// string -> length -> str.length()
+in char array 
+char name[20]
+ cin >> name 
+ cout << name   // will print untill it encounters the null character \0
 
-// char array -> compare -. strcmp(s1,s1)   ---> if != 0 {NOT EQUAL}... if =0 {EQUAL}
-// String ->
+*/
+
+
+
+
+/*
+ Char arry -> copy -> strcpy(destination,source) 
+ string -> copy -> str1 = str2
+ char arry -> length -> strlen(arr)
+ string -> length -> str.length()  str.size()
+ char array -> compare -. strcmp(s1,s1)   ---> if != 0 {NOT EQUAL}... if =0 {EQUAL}
+ String ->
+ */
+
+
 /*
 void compareFunction(string s1, string s2)
 {
@@ -120,6 +137,9 @@ int main()
     cout << "Reverse : "<< name << endl;
     return 0;
 }
+
+
+
 
 
 
