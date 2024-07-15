@@ -17,7 +17,7 @@ int partition(int arr[], int l, int u ){
         while(arr[s] <= piv  && s < u){  // Ensure s does not go out of bounds // if elements are less than or equal to pivot element the s++/ aage chalo 
             s++;
         }
-        while(arr[e] > piv){    // if elements are greater than pivot element then e--/ peche chalo 
+        while(arr[e] > piv && s < u){    // if elements are greater than pivot element then e--/ peche chalo 
             e--;
         }
         if(s<e){        // neither arr[l] <= piv nor arr[e] > piv  

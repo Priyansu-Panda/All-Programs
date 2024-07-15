@@ -391,6 +391,24 @@ int main()
 // Note: On executing this code, a warning will appear: "ISO C++ forbids converting a string constant into 'char*'. " Ignore the warning and then print the expected output.
 
 
+   int i = 5;
+    int *p = &i;
+
+    int a = *p;
+    a++;
+  cout << a << endl;
+
+// COPYING A POINTER 
+  int num = 5
+    int *p = &num;
+    int *q = p;
+    cout  << p << "---" << q << endl;
+    cout  << *p << "---" << *q << endl;
+
+
+
+
+
 
     return 0;
 }

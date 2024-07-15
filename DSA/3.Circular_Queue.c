@@ -138,7 +138,7 @@ int main(){
 
     int choice;
     while(1){
-         printf("\n1. Insert\n");
+        printf("\n1. Insert\n");
         printf("2. Delete\n");
         printf("3. Display\n");
         printf("4. Exit\n");

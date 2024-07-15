@@ -23,7 +23,7 @@ void rev(char nam, int n){
 int getl(char naam[]){
     int count = 0;
     for (int i=0; naam[i] != '\0'; i++){
-    count ++;
+        count ++;
     }
     return count;
 }

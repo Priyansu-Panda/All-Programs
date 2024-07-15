@@ -55,6 +55,9 @@ struct node* deleteNode(struct node *root, int data) {
         // If the data to be deleted is greater than the root's data, it lies in the right subtree
         root->right = deleteNode(root->right, data);
     } else {
+
+        // If the data to be deleted is equal to the root's data, we have found the node to be deleted
+        // Case 1: If the node has no children, simply delete it
         // Node with only one child or no child
         if (root->left == NULL) {
             struct node *temp = root->right;

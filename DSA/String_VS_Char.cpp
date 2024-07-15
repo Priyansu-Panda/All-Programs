@@ -1,3 +1,15 @@
+/*
+     char a[] = {'a','b','\0','c','d','\0','e'};
+    string s = {'a','b','\0','c','d','\0','e'};
+    cout << a << endl;
+    cout << s << endl;
+
+    // OUTPUT --- ab   &   ab cd e
+    
+*/
+
+
+
 // Char arry -> copy -> strcpy(destination,source)      // source-> destination  
 // string -> copy -> str1 = str2
 

@@ -54,6 +54,29 @@ int main() {
     cout << "Address stored in s: " << s << endl;
     cout << "Value pointed to by s: " << *s << endl;
 
+
+    int i = 5;
+    int *p = &i;
+
+    int a = *p;
+
+    cout << " VAlue of i " << i << endl;
+    cout << " VAlue of &i " << &i << endl;
+    cout << " VAlue of p " << p << endl;
+    cout << " VAlue of *p " << *p << endl;
+    cout << " VAlue of a " << a << endl;
+    a++;
+    cout << " VAlue of a " << a << endl;
+
+
+// COPYING A POINTER 
+  int num = 5
+    int *p = &num;
+    int *q = p;
+    cout  << p << "---" << q << endl;
+    cout  << *p << "---" << *q << endl;
+
+
     return 0;
 }
 

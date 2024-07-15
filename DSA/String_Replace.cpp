@@ -18,6 +18,7 @@ string replaceSpace(string str){
 
 
 string replaceSpace(string str){
+    /*
     for(int i = 0; i<str.length(); i++){
         // if (str[i] = ' '){
         if (str[i] == ' '){
@@ -34,6 +35,18 @@ string replaceSpace(string str){
             str[i]+='@';
             str[i]+='4';
             str[i]+='0';
+        }
+    }
+    return str;
+    */
+
+
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] == ' ') {
+            // Replace the space at index i with the string "@40"
+            str.replace(i, 1, "@40");
+            // Move the index to the end of the inserted string
+            i += 2; // Because "@40" has three characters and we already incremented i in the loop
         }
     }
     return str;

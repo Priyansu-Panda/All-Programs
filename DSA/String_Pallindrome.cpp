@@ -83,10 +83,11 @@ bool isPallindrome(string s){
     for(int i = 0; i<temp.length(); i++){
         temp[i] = toLowerCase(temp[i]);
     }
+    cout <<"Ur New temp is :"<< temp <<endl;
 
     // return checkPallindrome(string s);
     // return checkPallindrome(string temp);
-    cout << temp <<endl;
+    // cout << temp <<endl;
     //check Pallindrome
     return checkPallindrome(temp);
 }
@@ -142,3 +143,31 @@ int main()
 
 //     // Print the result
 //     cout << "Valid characters in the string: " << temp << endl;
+
+
+
+
+
+
+/*
+class Solution {
+public:
+    bool isPalindrome(string s) {
+
+        // Solution 3
+        int n = s.size();
+
+        for(int i = 0, j = n - 1; i < j; i++, j--){
+            // if(!isalnum(s[i])) i++;
+            // if(!isalnum(s[j])) j--;
+            while(!isalnum(s[i]) && i < j) i++;
+            while(!isalnum(s[j]) && i < j) j--;
+
+            if(tolower(s[i]) != tolower(s[j])) return false;
+        }
+
+        return true;
+    }
+}
+
+*/
