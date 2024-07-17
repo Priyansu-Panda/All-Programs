@@ -29,7 +29,8 @@ void bubbleR(int *arr, int n){
         return;
     }
     // 1 CASE - bade wale ko end mein pahauncha diya 
-    for(int i = 0; i<n; i++){
+    // for(int i = 0; i<n; i++){    //is iterating up to n, but it accesses arr[i + 1], which goes out of bounds when i is n-1. This leads to undefined behavior and can result in garbage values
+    for(int i = 0; i<n-1; i++){
 
         if(arr[i]> arr[i+1]){
             swap(arr[i], arr[i+1]);
