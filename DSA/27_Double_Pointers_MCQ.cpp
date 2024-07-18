@@ -4,6 +4,56 @@ using namespace std;
 int main()
 {
 
+    int arr[10];
+    cout << arr   << " " << &arr << " " << arr[0] << " " << &arr[0];    // all are same 
+
+    *arr -> value at 0th location 
+    arr <-> addressof first location 
+    *(arr +1 ) ->> arr == 0th loc, arr +1 == 1st loc *(1st loc) => value at first loc 
+    *arr +1 = value at 0th loc + 1  
+
+    arr[i] = *(arr + i)
+    i[arr] = *(i+arr)
+
+    
+
+ /*
+     0x7ffd467de880 0x7ffd467de880 0 0x7ffd467de880
+    40
+    4
+    8
+    0x7ffd467de880
+    0
+    0x7ffd467de880
+    0
+    0
+    0x7ffd467de880
+*/
+    
+    
+    cout << sizeof (arr)<< endl;
+    cout << sizeof(*arr)<< endl;
+    cout << sizeof(&arr)<< endl;
+    int *p = &arr[0];
+    cout << p << endl;
+        cout << *p << endl;
+    
+    p = arr;
+    cout << p << endl;
+        cout << *p << endl;
+    
+    *p = arr[1];
+    cout << *p << endl;
+    cout << p << endl;
+    // *p = arr;
+    // cout << *p << endl;
+    // cout << p << endl;
+
+    // arr <-> Mapped with adreess of 0th loc 
+    arr = arr + 1 ; // ERROR
+    p = p + 1; // OK
+
+
     // int first = 8; int second = 18 ;
     // int *ptr = & second;
     // *ptr = 9;
