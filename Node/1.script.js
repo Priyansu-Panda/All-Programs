@@ -1,3 +1,14 @@
+// sudo chown -R {path}
+// npm install -g figlet
+// npm link figlet
+
+
+
+
+
+
+
+
 // let n =5 ;
 
 // for (let i = 0; i <n;i ++){
