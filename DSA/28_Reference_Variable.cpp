@@ -28,7 +28,25 @@ void update1(int n){
 int main()
 {
 
-    int i = 6;
+    int i = 5;
+    int& j = i;
+
+    cout << "i : " << i << endl;
+    i++;
+    cout << "j : " << j << endl;
+    j++;
+    cout << "i : " << i << endl;
+    cout << "j : " << j << endl;
+
+    cout << "i : " << &i << endl;
+    cout << "j : " << &j << endl;
+    /*
+    i : 0x7ffc0248e2f4
+    j : 0x7ffc0248e2f4
+    */
+
+
+     i = 6;
     cout<< "Befor Update: " << i << endl;
     update1(i);
     cout<< "After Update1: " << i << endl;
