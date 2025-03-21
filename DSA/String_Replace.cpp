@@ -23,7 +23,7 @@ string replaceSpace(string str){
         // if (str[i] = ' '){
         if (str[i] == ' '){
             // str[i] = '@40';  // @40 a string
-            // str[i] = "@40";
+
             // str[i]= '@';
             // str[i]= '4';
             // str[i]= '0'; // net result will be 0
@@ -63,6 +63,9 @@ string replace(string str){
             temp.push_back('@') ;
             temp.push_back('4') ;
             temp.push_back('0') ;
+
+            // temp.push_back('@40') ; // WRONG  ---> temp.append("@40");    OR  temp += "@40"
+
         }
         else{
             temp.push_back(str[i]);
@@ -114,4 +117,7 @@ int main()
 //         p++;
 //     }
 //     cout<<s;
-// }
+
+
+
+

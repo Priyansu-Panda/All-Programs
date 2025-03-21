@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Water Gun Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .game-container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .choices {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .choice {
+            font-size: 24px;
+            margin: 0 10px;
+            cursor: pointer;
+            padding: 10px 20px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .choice:hover {
+            background-color: #f0f0f0;
+        }
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        #score {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Snake Water Gun Game</h1>
+        <div class="choices">
+            <div class="choice" onclick="play('snake')">🐍</div>
+            <div class="choice" onclick="play('water')">💧</div>
+            <div class="choice" onclick="play('gun')">🔫</div>
+        </div>
+        <div id="result"></div>
+        <div id="score">Your Score: 0 | Computer Score: 0</div>
+    </div>
+    <script>
+        let userScore = 0;
+        let computerScore = 0;
+
+        function computerChoice() {
+            const choices = ['snake', 'water', 'gun'];
+            const randomIndex = Math.floor(Math.random() * 3);
+            return choices[randomIndex];
+        }
+
+        function play(userChoice) {
+            const computer = computerChoice();
+            let result = '';
+
+            if (userChoice === computer) {
+                result = "It's a tie!";
+            } else if (
+                (userChoice === 'snake' && computer === 'water') ||
+                (userChoice === 'water' && computer === 'gun') ||
+                (userChoice === 'gun' && computer === 'snake')
+            ) {
+                result = "You win!";
+                userScore++;
+            } else {
+                result = "Computer wins!";
+                computerScore++;
+            }
+
+            document.getElementById('result').innerText = `You chose ${userChoice}, computer chose ${computer}. ${result}`;
+            document.getElementById('score').innerText = `Your Score: ${userScore} | Computer Score: ${computerScore}`;
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Water Gun Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .choices {
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Snake Water Gun Game</h1>
+        <p>Choose one:</p>
+        <div class="choices">
+            <button onclick="playGame('snake')">Snake</button>
+            <button onclick="playGame('water')">Water</button>
+            <button onclick="playGame('gun')">Gun</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function playGame(userChoice) {
+            const choices = ['snake', 'water', 'gun'];
+            const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+            let result = '';
+
+            if (userChoice === computerChoice) {
+                result = `It's a tie! Both chose ${userChoice}.`;
+            } else if (
+                (userChoice === 'snake' && computerChoice === 'water') ||
+                (userChoice === 'water' && computerChoice === 'gun') ||
+                (userChoice === 'gun' && computerChoice === 'snake')
+            ) {
+                result = `You win! ${userChoice} beats ${computerChoice}.`;
+            } else {
+                result = `You lose! ${computerChoice} beats ${userChoice}.`;
+            }
+
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+</html> -->

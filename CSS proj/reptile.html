@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cursor-Chasing Dragon</title>
+    <style>
+        #dragon {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            border-radius: 50%;
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="dragon"></div>
+    <script>
+        const dragon = document.getElementById('dragon');
+        const canvas = document.body;
+
+        let dragonX = window.innerWidth / 2;
+        let dragonY = window.innerHeight / 2;
+
+        function updateDragonPosition(event) {
+            const cursorX = event.clientX;
+            const cursorY = event.clientY;
+
+            const angle = Math.atan2(cursorY - dragonY, cursorX - dragonX);
+            const speed = 5;
+
+            dragonX += Math.cos(angle) * speed;
+            dragonY += Math.sin(angle) * speed;
+
+            dragon.style.left = dragonX + 'px';
+            dragon.style.top = dragonY + 'px';
+            dragon.style.transform = 'rotate(' + (angle * 180 / Math.PI) + 'deg)';
+        }
+
+        window.addEventListener('mousemove', updateDragonPosition);
+    </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium To-Do List</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #3a3a4a);
+            color: #ffffff;
+            text-align: center;
+            margin: 20px;
+        }
+        .container {
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            margin: auto;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .counter {
+            font-size: 18px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        input {
+            width: 70%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+        .add-btn {
+            padding: 10px 15px;
+            margin-left: 10px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .add-btn:hover {
+            background: #45a049;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+        .task:hover {
+            transform: scale(1.02);
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #bbb;
+        }
+        .btn {
+            cursor: pointer;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 5px;
+            border-radius: 5px;
+        }
+        .delete {
+            color: white;
+            background: #e74c3c;
+        }
+        .delete:hover {
+            background: #c0392b;
+        }
+        .complete {
+            color: white;
+            background: #3498db;
+        }
+        .complete:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Premium To-Do List</h2>
+        <div class="counter" id="taskCounter">Tasks Remaining: 0</div>
+        <input type="text" id="taskInput" placeholder="Add a new task...">
+        <button class="add-btn" onclick="addTask()">Add</button>
+        <ul id="taskList"></ul>
+    </div>
+    <script>
+        let tasks = [
+            "[Video 2] What is Artificial Intelligence | Learn AI with Real-Life Examples",
+            "[Video 23] Introduction to Intelligent Agents and their Types with Example",
+            "[Video 24] Simple Reflex Agent in AI with Example",
+            "[Video 25] Model-Based Reflex Agent in AI",
+            "[Video 26] Goal-Based Agents in AI with Real-Life Examples",
+            "[Video 27] Utility-Based Agents in AI with Real-Life Examples",
+            "[Video 3] What is State Space Search | Problem Solving in AI",
+            "[Video 4] Uninformed vs Informed Search in AI",
+            "[Video 5] Breadth-First Search (BFS) with Example",
+            "[Video 6] Depth-First Search (DFS) with Example",
+            "[Video 7] Bidirectional Search Algorithm",
+            "[Video 8] 8-Puzzle Problem in AI without Heuristic",
+            "[Video 9] What is Heuristic in AI | Why we use Heuristic | How to Calculate Heuristic",
+            "[Video 10] 8-Puzzle Problem with Heuristic (Informed Search)",
+            "[Video 11] Generate and Test Search in AI",
+            "[Video 12] Best First Search Algorithm in AI",
+            "[Video 13] Beam Search Algorithm",
+            "[Video 14] Hill Climbing Algorithm",
+            "[Video 15] A Algorithm in AI*",
+            "[Video 16] How to Prove A is Admissible | Underestimation & Overestimation*",
+            "[Video 17] AO Algorithm in AI*",
+            "[Video 34] What is Constraint Satisfaction | CSP in AI",
+            "[Video 35] How Constraint Satisfaction Algorithm Works",
+            "[Video 18] Introduction to Game Playing in AI",
+            "[Video 19] Minimax Algorithm in Game Playing",
+            "[Video 20] Alpha-Beta Pruning in AI",
+            "[Video 21] Knowledge Representation and Reasoning in AI",
+            "[Video 22] Propositional Logic in AI"
+        ];
+
+        function loadTasks() {
+            const taskList = document.getElementById("taskList");
+            taskList.innerHTML = "";
+            tasks.forEach((task, index) => {
+                let li = document.createElement("li");
+                li.classList.add("task");
+                li.innerHTML = `<span>${task}</span> 
+                    <button class="btn complete" onclick="toggleComplete(this)">✔</button> 
+                    <button class="btn delete" onclick="deleteTask(${index})">✖</button>`;
+                taskList.appendChild(li);
+            });
+            updateCounter();
+        }
+
+        function addTask() {
+            let taskInput = document.getElementById("taskInput");
+            if (taskInput.value.trim() !== "") {
+                tasks.push(taskInput.value);
+                taskInput.value = "";
+                loadTasks();
+            }
+        }
+
+        function deleteTask(index) {
+            tasks.splice(index, 1);
+            loadTasks();
+        }
+
+        function toggleComplete(button) {
+            let taskText = button.parentElement.querySelector("span");
+            taskText.classList.toggle("completed");
+            updateCounter();
+        }
+
+        function updateCounter() {
+            let remainingTasks = document.querySelectorAll(".task span:not(.completed)").length;
+            document.getElementById("taskCounter").textContent = `Tasks Remaining: ${remainingTasks}`;
+        }
+
+        loadTasks();
+    </script>
+</body>
+</html>

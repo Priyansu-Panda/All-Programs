@@ -1,0 +1,19 @@
+# Ignore the 'Chai' folder at the root
+Chai/
+
+# Ignore the 'Node' folder at the root
+Node/
+
+# Ignore the 'Jupyter' folder at the root
+Jupyter/
+
+# Ignore the 'Backend Chai' folder at the root
+Backend Chai/
+
+# Ignore the '.vscode' folder (VS Code settings)
+.vscode/
+
+# Ignore all 'node_modules' folders, no matter where they are located
+**/node_modules/
+
+.env
