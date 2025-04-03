@@ -1,46 +1,59 @@
+
 #include<iostream>
 using namespace std;
 
-void swap(int a1[], int a2[], int p,int q, int l, int h){
-    int temp = a1[p];
-    a1[p] = a2[q];
-    a2[q] = a1[p];
+void spiarl(int mat[5][5], int m, int n){
+    int k = 1;
+
+    while(k <= (n)){
+
+        // Right 
+        for(int i = k; i<=n ; i++){
+            cout << mat[k][i] << " ";
+        }
+
+        // Down
+        for(int i = k+1; i<=n ; i++){
+            cout << mat[i][n] << " ";
+        }
+
+        // Left
+        for(int i = n-1; i>=k; i--){
+            cout << mat[n][i] << " ";
+        }
+
+        // Up
+        for(int i = n-1 ; i>k; i--){
+            cout << mat[i][k] << " ";
+        }
+
+        k++; n--;
+    }
+    return;
 }
- 
-int main()
-{
-    int a1[] = {1,3,5,7};
-    int a2[] = {0,2,4,6,8,9};
-    int m = sizeof(a1)/sizeof(a1[2]);
-    int n = sizeof(a2)/sizeof(a2[2]);
-    cout << n << " " << m << endl;
-
-    int p = m-1, q = 0;
-
-    while(p>=0 && q<m){
-        if(a1[p] > a2[q]){
-            swap(a1,a2,p,q,a1[p],a2[q]);
-            // swap(a1[p--],a2[q++]);
-            p--,q++;
-        }
-        else{
-            break;      // because they are sorted ...so once stopped.. no neeed to proceed 
-        }
-    }
-
-    for(int i = 0;i<m+n; i++){
-        if(i<m)
-            cout << a1[i] << " ";
-        else 
-            cout << a2[i-m] << " ";
-    }
 
 
+int main(){
+    // int n=5;
+    // int arr[25] = {0};
 
- 
+    // for(int i = 1; i<=n; i++){
+    //     for(int j = 1; j<=n; j++){
+    //         cin>> arr[i][j];
+    //     }
+    // }
+    int m =5, n = 5;
+    // int mat[m][n] = [[1,2,3,4,5][6,7,8,9,10][1,2,3,4,5][6,7,8,9,10][1,2,3,4,5][6,7,8,9,10]]
+    int mat[5][5] = {
+        {1, 2, 3, 4, 5},
+        {6, 7, 8, 9, 10},
+        {11, 12, 13, 14, 15},
+        {16, 17, 18, 19, 20},
+        {21, 22, 23, 24, 25}
+    };
+    
+
+    spiral(mat,m,n);
+
     return 0;
 }
-
-
-
-
